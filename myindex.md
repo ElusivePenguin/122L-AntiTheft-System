@@ -1,13 +1,5 @@
 <html>
 
-<head>
-	img { 
-      	display: block; 
-      	margin-left: auto; 
-      	margin-right: auto;}
-
-</head>
-
 <body>
 
 <center>
