@@ -13,7 +13,9 @@ img {
 <body>
 
 <center>
-<h1> <font size="48" color="red">122L <font size="48" color="blue">Term Project </font> </h1> 
+<h1> 
+<font size="48" color="red">122L <font size="48" color="blue">Term Project </font> 
+</h1> 
 </center>
   
 <img src="https://yt3.ggpht.com/a/AGF-l79iTUpavi-i7LKxvR4exeimm0HXl_xP6lhokw=s900-c-k-c0xffffffff-no-rj-mo" alt="LCOE"  style="width:50%;"> 
