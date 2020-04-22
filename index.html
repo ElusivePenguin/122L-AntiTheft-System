@@ -1,7 +1,3 @@
-<?php
-	include "slideText.html";
-?>
-
 <html>
 
 <head>
@@ -16,12 +12,10 @@
 	    display: inline-block
 	}
 </style>
-
-<link id="usnameLink" rel="stylesheet" type="text/css" href="styles.css">
-
 </head>
   
 <body>
+
 
 <center>
 <h1> 
@@ -37,14 +31,17 @@
   </div>
 
   <div class="inline-block">
-        <form action="slideText.html">
+        <form action="userGUI.html">
   	    <label for="usname">Username:</label><br>
   	    <input type="text" id="usname" name="usname"><br><br>
+	    
 
   	    <label for="psword">Password:</label><br>
   	    <input type="text" id="psword" name="psword"><br><br>
-  	    <input type="submit" value="Submit">
+
+  	    <input type="submit" value="Submit" name="Submit">
 	</form>
+
   </div>
 
 
@@ -52,8 +49,44 @@
       <img src="https://i.kym-cdn.com/photos/images/original/001/567/318/ba7.gif" alt="PepeD">
   </div>
 </div>
-
-
 </center> 
+
+
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCJHH27qHSwO8FLal5p8wf5aPQEEf7lpGY",
+    authDomain: "ece122l-carsecurity.firebaseapp.com",
+    databaseURL: "https://ece122l-carsecurity.firebaseio.com",
+    projectId: "ece122l-carsecurity",
+    storageBucket: "ece122l-carsecurity.appspot.com",
+    messagingSenderId: "153625676348",
+    appId: "1:153625676348:web:284878b5724681a154d139",
+    measurementId: "G-W4QKDKQD74"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  // Get a reference to the database service
+  var database = firebase.database();
+
+
+  function writeUserData(name, secret) {
+    firebase.database().ref('users'.set({
+      username: name,
+      password: secret
+    });
+  }
+
+  var myUser = document.getElementById("usname").value;
+  var mySecret = document.getElementById("psword").value;
+
+  writeUserData(myUser, mySecret)
+</script>
+
 </body>
+</html>
 
