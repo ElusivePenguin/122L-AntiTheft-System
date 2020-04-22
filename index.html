@@ -31,15 +31,16 @@
   </div>
 
   <div class="inline-block">
-        <form>
+        <form action="userGUI.html">
   	    <label for="usname">Username:</label><br>
-  	    <input type="text" id="usname" name="usname"><br><br>
+  	    <input type="text" placeholder="Enter Username" id="usname" name="usname"><br><br>
 	    
 
   	    <label for="psword">Password:</label><br>
-  	    <input type="text" id="psword" name="psword"><br><br>
+  	    <input type="password" placeholder="Enter Password" id="psword" name="psword"><br><br>
 
-  	    <input type="submit" value="Submit" name="Submit">
+  	    <button onclick="updateFirebase()">Submit</button>
+       
 	</form>
 
   </div>
@@ -53,7 +54,6 @@
 
 
 <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
@@ -68,27 +68,19 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+  
+  fucntion updateFirebase(){
+  const fb = firebase.database().ref()
+  
+  user_name = document.getElementById('usname')
+  user_secret = document.getElementById('psword')
+  data = {user_name,user_secret}
+	  
+  fb.child('User Login Info/').update(data);
+  };
 
-  // Get a reference to the database service
-  var database = firebase.database();
-
-
-  function writeUserData(name, secret) {
-    firebase.database().ref('/users'.set({
-      username: name,
-      password: secret
-    });
-  }
-
-  var myUser = document.getElementById("usname").value;
-  var mySecret = document.getElementById("psword").value;
-
-  document.write (myUser);
-  document.write (mySecret);
-
-  writeUserData(myUser, mySecret);
 </script>
+
 
 </body>
 </html>
