@@ -33,11 +33,11 @@
   <div class="inline-block">
 	<form>
   	    <label for="usname">Username:</label><br>
-  	    <input type="text" placeholder="Enter Username" id="usname" name="usname"><br><br>
+  	    <input type="text" id="usname" placeholder="Enter Username"><br><br>
 	    
 
   	    <label for="psword">Password:</label><br>
-  	    <input type="password" placeholder="Enter Password" id="psword" name="psword"><br><br>
+  	    <input type="password" id="psword" placeholder="Enter Password"><br><br>
 
   	    <button onclick="updateFirebase()">Submit</button>
        
@@ -72,8 +72,8 @@
   fucntion updateFirebase(){
   const fb = firebase.database().ref()
   
-  user_name = document.getElementById('usname')
-  user_secret = document.getElementById('psword')
+  user_name = document.getElementById('usname').value
+  user_secret = document.getElementById('psword').value
   data = {user_name,user_secret}
 	  
   fb.child('User Login Info/').update(data);
