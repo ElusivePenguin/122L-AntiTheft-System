@@ -18,7 +18,7 @@
 	database.ref().on("value", function(snap){
 	uName = snap.val().users.user_name;
 	pWord = snap.val().users.user_secret;
-	if (document.getElementById("usname").value==uName && dosument.getElementById("psword").value==pWord){
+	if (document.getElementById("usname").value==uName && document.getElementById("psword").value==pWord){
 	window.location.assign('userGUI.html');
 	}
 	else{
