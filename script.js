@@ -15,7 +15,7 @@
   fucntion login(){
 	var uName;
 	var pWord;
-	database.ref().on("value", function(snap){
+	$(database).ref().on("value", function(snap){
 	uName = snap.val().users.user_name;
 	pWord = snap.val().users.user_secret;
 	if (document.getElementById("usname").value==uName && document.getElementById("psword").value==pWord){
