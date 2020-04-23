@@ -67,14 +67,24 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   
-  fucntion updateFirebase(){
   const fb = firebase.database().ref()
+  const un = document.getElementById('usname').value
+  const pw = document.getElementById('psword').value
+ 
+  fucntion updateFirebase(un.value, pw.value){
+  fb.child('User Login Info/').set({
+  user_name: un.value,
+  user_secret: pw.value 
+  });
+  }
+
+  //const fb = firebase.database().ref()
   
-  user_name = document.getElementById('usname').value
-  user_secret = document.getElementById('psword').value
-  data = {user_name,user_secret}
+  //user_name = document.getElementById('usname').value
+  //user_secret = document.getElementById('psword').value
+  //data = {user_name,user_secret}
 	  
-  fb.child('User Login Info/').update(data);
+  //fb.child('User Login Info/').update(data);
   };
 
 </script>
