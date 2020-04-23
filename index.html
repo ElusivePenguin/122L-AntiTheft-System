@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -12,14 +11,51 @@
 	.inline-block{
 	    display: inline-block
 	}
+}
 </style>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase.js"></script>
-<script src="script.js"></script>
 </head>
   
 <body>
+
+
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCJHH27qHSwO8FLal5p8wf5aPQEEf7lpGY",
+    authDomain: "ece122l-carsecurity.firebaseapp.com",
+    databaseURL: "https://ece122l-carsecurity.firebaseio.com",
+    projectId: "ece122l-carsecurity",
+    storageBucket: "ece122l-carsecurity.appspot.com",
+    messagingSenderId: "153625676348",
+    appId: "1:153625676348:web:284878b5724681a154d139",
+    measurementId: "G-W4QKDKQD74"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+ 
+  
+  function loginData(){
+	var uName;
+	var pWord;
+	firebase.database().ref("Users").on("value", function(snapshot){
+		uName = snapshot.val().userName;
+		pWord = snapshot.val().userSecret;
+
+		if (document.getElementById("usname").value==uName && document.getElementById("psword").value==pWord)
+		{
+			window.location.assign('userGUI.html');
+		}
+		else
+		{
+			document.getElementById("errorMSG").innerHTML = "Username and Password do not match";
+		}
+
+	})
+  } 
+
+</script>
 	
 
 <center>
@@ -27,35 +63,19 @@
 <font size="48" color="red">122L <font size="48" color="blue">Term Project </font> 
 </h1>
   
-<img src="https://yt3.ggpht.com/a/AGF-l79iTUpavi-i7LKxvR4exeimm0HXl_xP6lhokw=s900-c-k-c0xffffffff-no-rj-mo" alt="LCOE"  style="width:25%;"> 
+<img src="https://yt3.ggpht.com/a/AGF-l79iTUpavi-i7LKxvR4exeimm0HXl_xP6lhokw=s900-c-k-c0xffffffff-no-rj-mo" alt="LCOE"  style="width:20%;"> 
+ <img src="https://i.kym-cdn.com/photos/images/original/001/567/318/ba7.gif" alt="PepeD">
 
-
-<div id="banner">
-  <div class="inline-block">
-      <img src="https://i.kym-cdn.com/photos/images/original/001/567/318/ba7.gif" alt="PepeD">
-  </div>
-
-  <div class="inline-block">
-	<form action="userGUI.html">
-  	    <label for="usname">Username:</label><br>
-  	    <input type="text" name="usname" id="usname" placeholder="Enter Username"><br><br>
+  <label for="usname">Username:</label><br>
+  <input type="text" id="usname" placeholder="Enter Username"><br><br>
 	    
 
-  	    <label for="psword">Password:</label><br>
-  	    <input type="password" name= "psword" id="psword" placeholder="Enter Password"><br><br>
+  <label for="psword">Password:</label><br>
+  <input type="password" id="psword" placeholder="Enter Password"><br><br>
 
-  	    <button>Submit</button>  
-	    <p id="errorMSG"></p>   
-	</form>
-  </div>
-
-  <div class="inline-block">
-      <img src="https://i.kym-cdn.com/photos/images/original/001/567/318/ba7.gif" alt="PepeD">
-  </div>
-	
-</div>
+  <button style="height:75px;width:200px" onclick = "loginData()"> <h1>Login</h1> </button>  
+<p id="errorMSG"></p>
 </center> 
-
 	
 </body>
 </html>
