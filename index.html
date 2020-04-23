@@ -15,33 +15,6 @@
 </head>
   
 <body>
-
-<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyCJHH27qHSwO8FLal5p8wf5aPQEEf7lpGY",
-    authDomain: "ece122l-carsecurity.firebaseapp.com",
-    databaseURL: "https://ece122l-carsecurity.firebaseio.com",
-    projectId: "ece122l-carsecurity",
-    storageBucket: "ece122l-carsecurity.appspot.com",
-    messagingSenderId: "153625676348",
-    appId: "1:153625676348:web:284878b5724681a154d139",
-    measurementId: "G-W4QKDKQD74"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  
-  const un = document.getElementById('usname').value
-  const pw = document.getElementById('psword').value
- 
-  fucntion updateFirebase(un.value, pw.value){
-  firebase.database().ref('User Login Info/').set({
-  user_name: un.value,
-  user_secret: pw.value 
-  });
-  }
-</script>
 	
 
 <center>
@@ -76,6 +49,34 @@
 	
 </div>
 </center> 
+
+
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCJHH27qHSwO8FLal5p8wf5aPQEEf7lpGY",
+    authDomain: "ece122l-carsecurity.firebaseapp.com",
+    databaseURL: "https://ece122l-carsecurity.firebaseio.com",
+    projectId: "ece122l-carsecurity",
+    storageBucket: "ece122l-carsecurity.appspot.com",
+    messagingSenderId: "153625676348",
+    appId: "1:153625676348:web:284878b5724681a154d139",
+    measurementId: "G-W4QKDKQD74"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+  const un = document.getElementById('usname').value
+  const pw = document.getElementById('psword').value
+ 
+  fucntion updateFirebase(un.value, pw.value){
+  firebase.database().ref('User Login Info/').set({
+  user_name: un.value,
+  user_secret: pw.value 
+  });
+  }
+</script>
 
 
 </body>
