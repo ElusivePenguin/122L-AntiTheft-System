@@ -12,17 +12,22 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
  
-  fucntion login(){
-	var uName;
-	var pWord;
-	$(database).ref().on("value", function(snap){
-	uName = snap.val().users.user_name;
-	pWord = snap.val().users.user_secret;
-	if (document.getElementById("usname").value==uName && document.getElementById("psword").value==pWord){
-	window.location.assign('userGUI.html');
-	}
-	else{
-	document.getElementById("errorMSG").innerHTML = "Username and Password do not match";
-	}
-	});
-  }
+  function Login(){
+      var database = firebase.database();
+      var user_name;
+      var user_secret;
+    	
+    	database.ref("users").on("value", function(snap){
+        
+    	if (document.getElementById("usname").value==uName && document.getElementById("psword").value==pWord){
+    	window.location.assign('userGUI.html');
+    	}
+    	else{
+    	document.getElementById("errorMSG").innerHTML = "Username and Password do not match";
+    	}
+    	});
+  });
+
+  
+  
+  
