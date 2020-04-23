@@ -21,10 +21,40 @@
 
 <body> 
 
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCJHH27qHSwO8FLal5p8wf5aPQEEf7lpGY",
+    authDomain: "ece122l-carsecurity.firebaseapp.com",
+    databaseURL: "https://ece122l-carsecurity.firebaseio.com",
+    projectId: "ece122l-carsecurity",
+    storageBucket: "ece122l-carsecurity.appspot.com",
+    messagingSenderId: "153625676348",
+    appId: "1:153625676348:web:284878b5724681a154d139",
+    measurementId: "G-W4QKDKQD74"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+ 
+  
+  var uName;
+  firebase.database().ref("Users").on("value", function(snapshot){
+    uName = snapshot.val().userName;
+
+    var combine = "Welcome  " + uName;
+    var changeText = combine.fontsize(7).bold().fontcolor("red");
+    var welcomeBanner = changeText;
+    document.getElementById("usersName").innerHTML = welcomeBanner;
+  })
+
+
+</script>
 
 <div class = "main"> 
     <marquee class="marq" bgcolor = "Blue" direction = "left" loop="" > 
-        <div class="geek1">Welcome UserName</div> 
+	<p id="usersName"></p>
     </marquee> 
 </div> 
 
