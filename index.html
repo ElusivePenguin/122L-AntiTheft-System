@@ -12,6 +12,10 @@
 	    display: inline-block
 	}
 </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase.js"></script>
+<script src="script.js"></script>
 </head>
   
 <body>
@@ -39,7 +43,7 @@
   	    <label for="psword">Password:</label><br>
   	    <input type="password" name= "psword" id="psword" placeholder="Enter Password"><br><br>
 
-  	    <button onclick="login()">Submit</button>  
+  	    <button onclick="Login()">Submit</button>  
 	    <p id="errorMSG"></p>   
 	</form>
   </div>
@@ -51,9 +55,6 @@
 </div>
 </center> 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase.js"></script>
-<script src="script.js"></script>
 	
 </body>
 </html>
