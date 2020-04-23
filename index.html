@@ -39,7 +39,8 @@
   	    <label for="psword">Password:</label><br>
   	    <input type="password" name= "psword" id="psword" placeholder="Enter Password"><br><br>
 
-  	    <button onclick="updateFirebase()">Submit</button>     
+  	    <button onclick="login()">Submit</button>  
+	    <p id="errorMSG"></p>   
 	</form>
   </div>
 
@@ -67,14 +68,23 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   
+  cosnt fb = firebase.database()
   const un = document.getElementById('usname').value
   const pw = document.getElementById('psword').value
  
-  fucntion updateFirebase(un.value, pw.value){
-  firebase.database().ref('User Login Info/').set({
-  user_name: un.value,
-  user_secret: pw.value 
-  });
+  fucntion login(){
+	var uName;
+	var pWord;
+	database.ref().on("value", function(snap){
+	uName = snap.val().users.user_name;
+	pWord = snap.val().users.user_secret;
+	if (document.getElementById("usname").value==uName && dosument.getElementById("psword").value==pWord){
+	window.location.assign('userGUI.html');
+	}
+	else{
+	document.getElementById("errorMSG").innerHTML = "Username and Password do not match";
+	}
+	});
   }
 </script>
 
