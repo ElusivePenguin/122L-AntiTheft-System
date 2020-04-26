@@ -1,20 +1,62 @@
+<div w3-include-html="content.html"></div> 
+
 <html>
 
 <head>
 <style>
-	img {
-  	    display: block;
-  	    margin-left: auto;
-  	    margin-right: auto;
+
+    .inline-block{
+	display: inline-block
+    }
+
+    .main { text-align:center; }
+		
+    .marq { 
+        padding-top:30px; 
+        padding-bottom:30px; 
+    } 
+    .geek1 { 
+        font-size:100px; 
+        font-weight:bold;
+        font-family:'Segoe UI'; 
+        color: #d4870a ; 
+        padding-bottom:10px; 
+	padding-left: 90px
+    }
+    .geek2 { 
+        font-size:50px; 
+        font-weight:bold;
+        font-family:'Segoe UI'; 
+        color: #d4870a ; 
+        padding-bottom:10px; 
+    }
+    body {
+  	background-image: url('https://images.hdqwalls.com/download/eagle-landscape-mountains-minimalist-ez-1920x1080.jpg');
+  	background-repeat: no-repeat;
+  	background-attachment: fixed;  
+ 	background-size: cover;
+	}
+	a {
+  	color: #d4870a ;
+	}
+	.mybutton
+	{
+	line-height: 200%;
+	margin-left: auto;
+        margin-right: auto;
 	}
 
-	.inline-block{
-	    display: inline-block
-	}
-</style>
+   </style>
 </head>
   
 <body>
+
+  <div class = "main"> 
+      <marquee class="marq" direction = "left" loop="" > 
+	  <div class="geek1">Cloud Alert</div>
+	  <div class="geek2">Protect your car with the cloud</div>
+      </marquee> 
+  </div> 
 
 
 <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase.js"></script>
@@ -59,20 +101,15 @@
 
 <center>
 <h1> 
-<font size="48" color="red">122L <font size="48" color="blue">Term Project </font> 
-</h1>
-  
-<img src="https://yt3.ggpht.com/a/AGF-l79iTUpavi-i7LKxvR4exeimm0HXl_xP6lhokw=s900-c-k-c0xffffffff-no-rj-mo" alt="LCOE"  style="width:20%;"> 
- <img src="https://i.kym-cdn.com/photos/images/original/001/567/318/ba7.gif" alt="PepeD">
 
-  <label for="usname">Username:</label><br>
+  <label for="usname"><font size="15" color= #d4870a>Username:</font></label><br>
   <input type="text" id="usname" placeholder="Enter Username"><br><br>
 	    
 
-  <label for="psword">Password:</label><br>
+  <label for="psword"><font size="15" color= #d4870a>Password:</font></label><br>
   <input type="password" id="psword" placeholder="Enter Password"><br><br>
 
-  <button style="height:75px;width:200px" onclick = "loginData()"> <h1>Login</h1> </button>  
+  <button class="mybutton" style="height:75px;width:200px" onclick = "loginData()"> <h1><font size="28" color= #d4870a >Login</font></h1> </button>  
 <p id="errorMSG"></p>
 </center> 
 	
