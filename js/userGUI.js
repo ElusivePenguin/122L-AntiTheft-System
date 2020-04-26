@@ -3,7 +3,7 @@ firebase.database().ref("Users").on("value", function(snapshot){
   uName = snapshot.val().userName;
 
   var combine = "Welcome  " + uName;
-  var changeText = combine.fontsize(30).bold().fontcolor("#d4870a");
-  var welcomeBanner = changeText;
+  var changeText = combine.bold().fontcolor("#d4870a");
+  var welcomeBanner = changeText.fontsize(7);
   document.getElementById("usersName").innerHTML = welcomeBanner;
 })
