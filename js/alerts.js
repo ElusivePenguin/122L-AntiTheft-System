@@ -5,7 +5,8 @@ firebase.database().ref("alert_info").on("value", function(snapshot){
     for(var key in alert_info){
       var row = alert_table.insertRow();
       var cell = row.insertCell();
-      var timestamp = new Date(alert_info[key]['timestamp']);
+      var temp = new Date(alert_info[key]['timestamp']);
+      var timestamp = temp.fontsize(7);
       cell.appendChild(document.createTextNode(timestamp.toLocaleString()));
 
       cell = row.insertCell();
