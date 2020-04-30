@@ -6,5 +6,5 @@ firebase.database().ref("Users").on("value", function(snapshot){
   var changeText = combine.bold().fontcolor("#d4870a");
   var welcomeBanner = changeText.fontsize(7);
   document.getElementById("usersName").innerHTML = welcomeBanner;
-  document.getElementById("usersName").style.fontsize = "xx-large;
+  document.getElementById("usersName").style.fontSize = "xx-large;
 })
