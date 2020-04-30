@@ -9,7 +9,7 @@
 }
 
 #alertTable, #alertTable th, #alertTable td {
-    border: 1px solid black;
+    border: 3px solid black;
 }
 
 #alertTable th, #alertTable td{
