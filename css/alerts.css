@@ -5,6 +5,7 @@
 #alertTable {
     border-collapse: collapse;
     margin: 10px;
+    font-size: 30px;
 }
 
 #alertTable, #alertTable th, #alertTable td {
