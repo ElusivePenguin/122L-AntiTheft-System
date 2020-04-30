@@ -2,6 +2,7 @@ import os
 from gpiozero import MotionSensor
 import time
 import pyrebase
+import random
 
 def on_alarm():
         os.system("fswebcam image.jpg")
@@ -23,7 +24,12 @@ def on_alarm():
                 mac_str = ":".join(mac_hex[i:i+2] for i in range(0, len(mac_hex), 2))
                 mac_addrs.append(mac_str)
 
-        firebase.database().child("alert_info").push({"device_id": "0", "mac_addrs": mac_addrs, "timestamp": {".sv": "timestamp"}})
+        #create a randomizer for different car model names
+        carArray = ["Kia Optima","Honda Civic","Ford Mustang","Jeep Cherokee","Hyundai Elantra"]
+        randomCar = random.choice(carArray)
+        
+
+        firebase.database().child("alert_info").push({"car_model": "{}".format{randomCar}, "mac_addrs": mac_addrs, "timestamp": {".sv": "timestamp"}})
 
 firebaseConfig = {
     "apiKey": "AIzaSyCJHH27qHSwO8FLal5p8wf5aPQEEf7lpGY",
