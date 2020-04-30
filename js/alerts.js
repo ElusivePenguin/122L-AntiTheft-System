@@ -9,7 +9,7 @@ firebase.database().ref("alert_info").on("value", function(snapshot){
       cell.appendChild(document.createTextNode(timestamp.toLocaleString()));
 
       cell = row.insertCell();
-      cell.appendChild(document.createTextNode(alert_info[key]['device_id']));
+      cell.appendChild(document.createTextNode(alert_info[key]['car_model']));
 
       cell = row.insertCell();
       var mac_addrs = alert_info[key]['mac_addrs'];
