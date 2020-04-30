@@ -13,8 +13,11 @@ firebase.database().ref("alert_info").on("value", function(snapshot){
 
       cell = row.insertCell();
       var mac_addrs = alert_info[key]['mac_addrs'];
-      for(var key in alert_info[key]['mac_addrs']){
-        cell.appendChild(document.createTextNode(mac_addrs[key]));
+      var mac_lus = alert_info[key]['mac_lookup'];
+      for(var index in alert_info[key]['mac_addrs']){
+        var mac_lus_str = "";
+        if(mac_lus) mac_lus_str = " ("+mac_lus[index]+")";
+        cell.appendChild(document.createTextNode(mac_addrs[index] + mac_lus_str));
         cell.appendChild(document.createElement('br'))
       }
     }
