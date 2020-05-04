@@ -49,14 +49,16 @@ sender = Emailer()
 
 sendTo = 'michaelbendot33@gmail.com'
 emailSubject = "Cloud Alert - Car Status"
-emailContent = "REEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
 
 
 ###################################################################################
 
 
-#Sends an email to the "sendTo" address with the specified "emailSubject" as the subject and "emailContent" as the email content.
-sender.sendmail(sendTo, emailSubject, emailContent)  
+def sendEmail(x):
+
+    emailContent = x
+    #Sends an email to the "sendTo" address with the specified "emailSubject" as the subject and "emailContent" as the email content.
+    sender.sendmail(sendTo, emailSubject, emailContent)  
 
 
 ###################################################################################
