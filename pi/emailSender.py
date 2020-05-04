@@ -54,9 +54,9 @@ emailSubject = "Cloud Alert - Car Status"
 ###################################################################################
 
 
-def sendEmail(x):
+def sendEmail(carModel, myStatus):
 
-    emailContent = x
+    emailContent = "The status of your {} is {}".format(carModel, myStatus)
     #Sends an email to the "sendTo" address with the specified "emailSubject" as the subject and "emailContent" as the email content.
     sender.sendmail(sendTo, emailSubject, emailContent)  
 
